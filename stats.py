@@ -11,3 +11,9 @@ def get_num_chars(book_contents):
         else:
             num_chars[char] = 1
     return num_chars
+
+def sort_char_dict(char_dict):
+    dict_list = []
+    for dict in sorted(char_dict.items(), key=lambda x: x[1], reverse=True):
+        dict_list.append({"char": dict[0], "num": dict[1]})
+    return dict_list
