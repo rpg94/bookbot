@@ -1,3 +1,4 @@
+import sys
 from stats import *
 
 def get_book_text(book):
@@ -6,8 +7,12 @@ def get_book_text(book):
     return book_contents
 
 def main():
+    if len(sys.argv) != 2:
+        print("Usage: python3 main.py <path_to_book>")
+        sys.exit(1)
+
     # initialize variables
-    book = get_book_text("books/frankenstein.txt")
+    book = get_book_text(sys.argv[1])
     num_words = get_num_words(book)
     num_char_dict = get_num_chars(book)
     sorted_chars = sort_char_dict(num_char_dict)
