@@ -21,5 +21,6 @@ def main():
     for char in sorted_chars:
         if char["char"].isalpha():
             print(char["char"] + ": " + str(char["num"]))
+    print("============= END ===============")
 
 main()
